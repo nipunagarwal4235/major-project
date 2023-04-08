@@ -201,7 +201,179 @@ function HomePage() {
             </label>
             <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
         </div>
-      </form>
+        <label htmlFor="designation" className="block font-medium">
+            Organisation
+          </label>
+            <div>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+            </div>
+            <div>
+            <label htmlFor="dob" className="block font-medium">
+            Date of Joining
+          </label>
+          <input
+            type="date"
+            id="dob"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+          />
+        </div>
+        <div>
+        <label htmlFor="designation" className="block font-medium">
+            Scale of pay Rs
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+         </div>
+         <div>
+          <label htmlFor="designation" className="block font-medium">
+            Total Emoluments(per month) Rs
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+          </div>
+          <div className="my-4">
+          <h4>Phone Number</h4>
+          <label htmlFor="designation" className="block font-medium">
+            Office
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+        </div>
+        <label htmlFor="designation" className="block font-medium">
+            Mobile
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+            <label htmlFor="designation" className="block font-medium">
+            *Landline
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+        <div>
+        <label htmlFor="designation" className="block font-medium">
+            Area of specialisation
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+        </div>
+        <div>
+        <label htmlFor="designation" className="block font-medium">
+            Current area of research
+            </label>
+            <input type="text" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
+        </div>
+        <div className="my-4">
+          <h4>Acadmic record starting with graduation</h4>
+          </div>
+                </form>
+    <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
+	
+	<div className="overflow-x-auto">
+		<table className="min-w-full text-xs">
+			<colgroup>
+      <col></col>
+				<col></col>
+				<col></col>
+				<col></col>
+				<col className="w-24"></col>
+      </colgroup>
+				
+			<colgroup/>
+			<thead className="dark:bg-gray-700">
+				<tr className="text-left">
+					<th className="p-3">Degree</th>
+					<th className="p-3">College/University</th>
+					<th className="p-3">Year of Joining</th>
+					<th className="p-3">Year of leaving</th>
+					<th className="p-3 text-right">Percentage/CGPA</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
+					<td className="p-3">
+						<p>97412378923</p>
+					</td>
+					<td className="p-3">
+						<p>Microsoft Corporation</p>
+					</td>
+					<td className="p-3">
+						<p>14 Jan 2022</p>
+						<p className="dark:text-gray-400">Friday</p>
+					</td>
+					<td className="p-3">
+						<p>01 Feb 2022</p>
+						<p className="dark:text-gray-400">Tuesday</p>
+					</td>
+					<td className="p-3 text-right">
+						<p>$15,792</p>
+					</td>
+					
+				</tr>
+				<tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
+					<td className="p-3">
+						<p>97412378923</p>
+					</td>
+					<td className="p-3">
+						<p>Tesla Inc.</p>
+					</td>
+					<td className="p-3">
+						<p>14 Jan 2022</p>
+						<p className="dark:text-gray-400">Friday</p>
+					</td>
+					<td className="p-3">
+						<p>01 Feb 2022</p>
+						<p className="dark:text-gray-400">Tuesday</p>
+					</td>
+					<td className="p-3 text-right">
+						<p>$275</p>
+					</td>
+					<td className="p-3 text-right">
+						
+					</td>
+				</tr>
+				<tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
+					<td className="p-3">
+						<p>97412378923</p>
+					</td>
+					<td className="p-3">
+						<p>Coca Cola co.</p>
+					</td>
+					<td className="p-3">
+						<p>14 Jan 2022</p>
+						<p className="dark:text-gray-400">Friday</p>
+					</td>
+					<td className="p-3">
+						<p>01 Feb 2022</p>
+						<p className="dark:text-gray-400">Tuesday</p>
+					</td>
+					<td className="p-3 text-right">
+						<p>$8,950,500</p>
+					</td>
+					<td className="p-3 text-right">
+						
+					</td>
+				</tr>
+				<tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
+					<td className="p-3">
+						<p>97412378923</p>
+					</td>
+					<td className="p-3">
+						<p>Nvidia Corporation</p>
+					</td>
+					<td className="p-3">
+						<p>14 Jan 2022</p>
+						<p className="dark:text-gray-400">Friday</p>
+					</td>
+					<td className="p-3">
+						<p>01 Feb 2022</p>
+						<p className="dark:text-gray-400">Tuesday</p>
+					</td>
+					<td className="p-3 text-right">
+						<p>$98,218</p>
+					</td>
+					<td className="p-3 text-right">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
     </>
   );
 }
