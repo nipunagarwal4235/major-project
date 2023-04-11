@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 // import {TableData , EmployeeData} from '../components/Table/Form.jsx';
-import {TableData , EmployeeData} from "../components/Table/Form.jsx";
+import {TableData , EmployeeData,ProfessionalData, MembershipData, ConferenceData, CourseData,PostData} from "../components/Table/Form.jsx";
 
 
 const options = [
@@ -466,7 +466,7 @@ function HomePage() {
                 >
                   Professional Training/Certification Required:
                 </label>
-                {/* <TableData /> */}
+                <ProfessionalData />
               </div>
             </li>
             <li>
@@ -477,7 +477,7 @@ function HomePage() {
                 >
                   Membership of Professional societies/bodies:
                 </label>
-                {/* <TableData /> */}
+                <MembershipData />
               </div>
             </li>
             <li>
@@ -488,7 +488,7 @@ function HomePage() {
                 >
                   Key Seminars/Workshops/Conferences attended:
                 </label>
-                {/* <TableData /> */}
+                <ConferenceData />
               </div>
             </li>
             <li>
@@ -532,7 +532,7 @@ function HomePage() {
                 >
                   Courses/MOOC Allocated:
                 </label>
-                {/* <TableData /> */}
+                <CourseData />
               </div>
             </li>
             <li>
@@ -543,7 +543,7 @@ function HomePage() {
                 >
                   Post Graduate/ Doctorate Thesis Supervision:
                 </label>
-                {/* <TableData /> */}
+                <PostData />
               </div>
             </li>
             <li>
