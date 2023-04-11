@@ -310,7 +310,7 @@ function HomePage() {
               onChange={(e) => setDesignation(e.target.value)}
             /></div></li>
           <li><div>
-            <label htmlFor="designation" className="block font-medium">
+            <label htmlFor="designation" className="font-ruda font-medium text-gray-700 pr-4 my-4">
               Current area of research
             </label>
             <input
