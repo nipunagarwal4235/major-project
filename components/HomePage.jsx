@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import TableData from './Table/Table'
+import Header from './Header'
 
 const options = [
   { value: "Mechanical", label: "Mechanical" },
@@ -32,6 +34,7 @@ function HomePage() {
   };
   return (
     <>
+    <Header></Header>
       <div className="flex items-center justify-center py-4">
         <h1 className="text-black text-md md:text-2xl lg:text-4xl font-ruda font-semibold text-center">
           Employment Application Form
@@ -328,7 +331,7 @@ function HomePage() {
                 >
                   Academic Record starting with Graduation:
                 </label>
-                <TableData />
+                <TableData/>
               </div>
             </li>
           </ol>
