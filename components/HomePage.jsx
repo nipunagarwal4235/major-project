@@ -143,7 +143,7 @@ function HomePage() {
             />
           </div>
           </li>
-          <div className="my-4">
+          <li><div className="font-ruda font-medium text-gray-700 pr-4 my-4">
             <label htmlFor="maritalStatus" className="font-ruda font-medium text-gray-700 pr-4">
               Marital Status:
             </label>
@@ -163,19 +163,22 @@ function HomePage() {
               onChange={(e) => setMaritalStatus(e.target.value)}
             />
             <label htmlFor="married">Married</label>
-          </div>
+          </div></li>
+          <li>
           <div className="my-4">
-            <label htmlFor="nationality" className="block font-medium">
-              Nationality
+            <label htmlFor="nationality" className="font-ruda font-medium text-gray-700 pr-4">
+              Nationality:
             </label>
             <input
               type="text"
               id="nationality"
+              className="w-1/5 px-4 py-2 rounded-md bg-gray-300"
               value={nationality}
               onChange={(e) => setNationality(e.target.value)}
             />
           </div>
-          <div className="my-4">
+          </li>
+          <li><div className="font-ruda font-medium text-gray-700 pr-4 my-4">
             <label htmlFor="gender" className="block font-medium">
               Gender
             </label>
@@ -186,7 +189,7 @@ function HomePage() {
               value="male"
               onChange={(e) => setGender(e.target.value)}
             ></input>
-            <label htmlFor="male">Male</label>
+            <label htmlFor="male" className="font-ruda font-medium text-gray-700 pr-4">Male</label>
             <input
               type="radio"
               id="female"
@@ -194,7 +197,7 @@ function HomePage() {
               value="female"
               onChange={(e) => setGender(e.target.value)}
             ></input>
-            <label htmlFor="female">Female</label>
+            <label htmlFor="female" className="font-ruda font-medium text-gray-700 pr-4">Female</label>
             <input
               type="radio"
               id="other"
@@ -202,82 +205,85 @@ function HomePage() {
               value="other"
               onChange={(e) => setGender(e.target.value)}
             ></input>
-            <label htmlFor="female">Other</label>
-          </div>
-          <div className="my-4">
+            <label htmlFor="Other" className="font-ruda font-medium text-gray-700 pr-4">Other</label>
+          </div></li>
+          <li><div  className="font-ruda font-medium text-gray-700 pr-4 my-4">
             <h4>Present Employment</h4>
-            <label htmlFor="designation" className="block font-medium">
-              Designation
+            <div className="grid grid-cols-3 gap-4">
+            <div className="py-4">
+              <label htmlFor="designation" className="font-ruda font-medium text-gray-700 pr-4">
+              Designation:
             </label>
             <input
               type="text"
               id="designation"
+              className="w-\ px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <label htmlFor="designation" className="block font-medium">
+            /></div>
+          <div><label htmlFor="designation" className="font-ruda font-medium text-gray-700 pr-4">
             Organisation
           </label>
-          <div>
             <input
               type="text"
               id="designation"
+              className="w-/ px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="dob" className="block font-medium">
+            /></div>
+            <div><label htmlFor="dob" className="font-ruda font-medium text-gray-700 pr-4">
               Date of Joining
             </label>
             <input
               type="date"
               id="dob"
+              className="w-/ px-4 py-2 rounded-md bg-gray-300"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="designation" className="block font-medium">
+            /></div>
+            </div>
+            <div className="grid grid-cols-3 gap-4"><div className="py-4"><label htmlFor="designation" className="font-ruda font-medium text-gray-700 pr-4">
               Scale of pay Rs
             </label>
             <input
               type="text"
               id="designation"
+              className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="designation" className="block font-medium">
+            /></div>        
+            <div className="py-4"><label htmlFor="designation" className="font-ruda font-medium text-gray-700 pr-4">
               Total Emoluments(per month) Rs
             </label>
             <input
               type="text"
               id="designation"
+              className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div className="my-4">
+            /></div></div>
+            </div></li>
+          
+          <li><div  className="font-ruda font-medium text-gray-700 pr-4 my-4">
             <h4>Phone Number</h4>
-            <label htmlFor="designation" className="block font-medium">
+            <div><label htmlFor="designation" className="block font-medium">
               Office
             </label>
             <input
               type="text"
               id="designation"
+              className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
             />
-          </div>
+          
           <label htmlFor="designation" className="block font-medium">
             Mobile
           </label>
           <input
             type="text"
             id="designation"
+            className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
             value={designation}
             onChange={(e) => setDesignation(e.target.value)}
           />
@@ -287,31 +293,33 @@ function HomePage() {
           <input
             type="text"
             id="designation"
+            className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
             value={designation}
             onChange={(e) => setDesignation(e.target.value)}
-          />
-          <div>
+          /></div></div></li>
+          <li><div className="font-ruda font-medium text-gray-700 pr-4 my-4">
             <label htmlFor="designation" className="block font-medium">
               Area of specialisation
             </label>
             <input
               type="text"
               id="designation"
+              className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div>
+            /></div></li>
+          <li><div>
             <label htmlFor="designation" className="block font-medium">
               Current area of research
             </label>
             <input
               type="text"
               id="designation"
+              className="w-1/3 px-4 py-2 rounded-md bg-gray-300"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
             />
-          </div>
+          </div></li>
           <div className="my-4">
             <h4>Acadmic record starting with graduation</h4>
           </div>
