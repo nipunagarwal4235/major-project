@@ -49,18 +49,68 @@ function StudentForm(props) {
   };
 
   return (
-    <div>
-      <label>Degree</label>
-      <input type="text" value={degree} onChange={changeDegree} />
-      <label>University</label>
-      <input type="text" value={university} onChange={changeUniversity} />
-      <label>Year of Joining</label>
-      <input type="text" value={joining} onChange={changeJoining} />
-      <label>Year of Leaving</label>
-      <input type="text" value={leaving} onChange={changeLeaving} />
-      <label>CGPA</label>
-      <input type="text" value={cgpa} onChange={changeCgpa} />
-      <button onClick={transferValue}> Click Me</button>
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Degree:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={degree}
+            onChange={changeDegree}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            University:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={university}
+            onChange={changeUniversity}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year of Joining:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={joining}
+            onChange={changeJoining}
+          />
+        </div>
+
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year of Leaving:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={leaving}
+            onChange={changeLeaving}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            CGPA:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={cgpa}
+            onChange={changeCgpa}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
     </div>
   );
 }
