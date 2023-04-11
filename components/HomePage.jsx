@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import HomePage2 from './NewPage'
+import Header from './Header'
 
 const options = [
   { value: "Mechanical", label: "Mechanical" },
@@ -32,6 +34,7 @@ function HomePage() {
   };
   return (
     <>
+    <Header/>
       <h1>Employment Application Form</h1>
       <p>
         BML Munjal University (BMU), founded in 2014 by the promoters of the
@@ -672,6 +675,7 @@ c.A description on which research teaching development programmer you would like
     I hereby acknowledge the fact that I have read all the instructions carefully and is attaching all my perrsonal details in the best of knowledge and belief.
   </label>
 </div>
+<HomePage2/>
 
 <button type="button" className="px-8 py-3 font-semibold rounded dark:bg-red-100 dark:text-gray-800">NEXT PAGE</button>
 

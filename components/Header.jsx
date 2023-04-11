@@ -1,20 +1,27 @@
+import React from 'react'
+
+const Header = () => 
+{
+  return 
+  (
+<>
 <header>
   
   <nav
     class="relative flex w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start"
     data-te-navbar-ref>
-    <div class="flex w-full flex-wrap items-center justify-between px-6">
+    <div class="flex w-full flex-wrap items-center justify-between px-3">
       <div class="flex items-center">
         
         <button
-          class="mr-2 border-0 bg-transparent py-2 text-xl leading-none transition-shadow duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 dark:hover:text-white dark:focus:text-white lg:hidden"
+          class="border-0 bg-transparent px-2 text-xl leading-none transition-shadow duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 dark:hover:text-white dark:focus:text-white lg:hidden"
           type="button"
           data-te-collapse-init
           data-te-target="#navbarSupportedContentX"
           aria-controls="navbarSupportedContentX"
           aria-expanded="false"
           aria-label="Toggle navigation">
-        
+          
           <span class="[&>svg]:w-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +29,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="h-6 w-6">
+              class="h-7 w-7">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -40,7 +47,7 @@
         <ul
           class="mr-auto flex flex-col lg:flex-row"
           data-te-navbar-nav-ref>
-          <li data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
               class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
               href="#!"
@@ -50,7 +57,7 @@
               >Home</a
             >
           </li>
-          <li data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
               class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
               href="#!"
@@ -60,7 +67,7 @@
               >Features</a
             >
           </li>
-          <li data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
               class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
               href="#!"
@@ -70,7 +77,7 @@
               >Pricing</a
             >
           </li>
-          <li data-te-nav-item-ref>
+          <li class="mb-2 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
               class="block transition duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:hover:text-white dark:focus:text-white lg:p-2 [&.active]:text-black/90"
               href="#!"
@@ -90,7 +97,7 @@
     class="relative overflow-hidden bg-cover bg-no-repeat"
     style="
       background-position: 50%;
-      background-image: url('https://tecdn.b-cdn.net/img/new/slides/146.webp');
+      background-image: url('https://unsplash.com/photos/n95VMLxqM2I');
       height: 350px;
     ">
     <div
@@ -112,3 +119,10 @@
     </div>
   </div>
 </header>
+</>
+    
+  )
+
+}
+
+export default Header
