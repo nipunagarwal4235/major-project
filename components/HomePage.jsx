@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import TableData from "./Table/Form.jsx";
+// import {TableData , EmployeeData} from '../components/Table/Form.jsx';
+import {TableData , EmployeeData} from "../components/Table/Form.jsx";
+
 
 const options = [
   { value: "Mechanical", label: "Mechanical" },
@@ -453,7 +455,7 @@ function HomePage() {
                 >
                   Employment:
                 </label>
-                {/* <TableData /> */}
+                <EmployeeData/>
               </div>
             </li>
             <li>
