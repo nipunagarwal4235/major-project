@@ -4,7 +4,7 @@ import jsonData from "./data.json";
 
 function TableData() {
   const [studentData, setStudentData] = useState(jsonData);
-
+ 
   const tableRows = studentData.map((info) => {
     return (
       <tr>
@@ -29,18 +29,18 @@ function TableData() {
   return (
     <div className="container p-2 mx-auto sm:p-4 ">
       <div className="overflow-x-auto">
-        <table className="min-w-full text-xs">
-          <thead className="">
-            <tr className="text-left">
+        <table className="min-w-full text-md font-ruda font-medium text-gray-800 table-fixed">
+          <thead className="bg-gray-300 rounded  border-black">
+            <tr className="text-center">
               <th className="p-3">Serial No.</th>
               <th className="p-3">Degree</th>
               <th className="p-3">College/University</th>
               <th className="p-3">Year of Joining</th>
               <th className="p-3">Year of leaving</th>
-              <th className="p-3 text-right">Percentage/CGPA</th>
+              <th className="p-3">Percentage/CGPA</th>
             </tr>
           </thead>
-          <tbody>{tableRows}</tbody>
+          <tbody className="text-center">{tableRows}</tbody>
         </table>
         <StudentForm func={addRows} />
       </div>
