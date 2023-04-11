@@ -115,4 +115,115 @@ function StudentForm(props) {
   );
 }
 
-export default StudentForm;
+function EmployeeForm(props) {
+  const [employer, setEmployer] = useState("");
+  const [designation, setDesignation] = useState("");
+  const [joiningDate, setJoiningDate] = useState("");
+  const [leavingDate, setLeavingDate] = useState("");
+  const [ctc, setCtc] = useState("");
+
+  const changeEmployer = (event) => {
+    setEmployer(event.target.value);
+  };
+  const changeDesignation = (event) => {
+    setDesignation(event.target.value);
+  };
+  const changeJoiningDate = (event) => {
+    setJoiningDate(event.target.value);
+  };
+  const changeLeavingDate = (event) => {
+    setLeavingDate(event.target.value);
+  };
+  const changeCtc = (event) => {
+    setCtc(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      employer,
+      designation,
+      joiningDate,
+      leavingDate,
+      ctc,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setEmployer("");
+    setDesignation("");
+    setJoiningDate("");
+    setLeavingDate("");
+    setCtc("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Employer:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={employer}
+            onChange={changeEmployer}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Designation:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={designation}
+            onChange={changeDesignation}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Joining Date:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={joiningDate}
+            onChange={changeJoiningDate}
+          />
+        </div>
+
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Leaving Date:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={leavingDate}
+            onChange={changeLeavingDate}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            CTC:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={ctc}
+            onChange={changeCtc}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
+export { StudentForm, EmployeeForm };
