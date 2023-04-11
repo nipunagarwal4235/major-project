@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import TableData from "./Table/Form.jsx";
+import Table from "./Table";
 
 const options = [
   { value: "Mechanical", label: "Mechanical" },
@@ -57,190 +59,237 @@ function HomePage() {
         </h2>
       </div>
       <div className="px-16">
-      
         <form onSubmit={handleSubmit}>
-        <ol className="list-decimal">
-<li>
-          <div className="my-4">
-            <label
-              htmlFor="postAppliedFor"
-              className="font-ruda font-medium text-gray-700 pr-4"
-            >
-              Post Applied For:
-            </label>
-            <input
-              type="text"
-              id="postAppliedFor"
-              className="w-1/3 px-4 py-2 rounded bg-gray-300"
-              value={postAppliedFor}
-              onChange={(e) => setPostAppliedFor(e.target.value)}
-            />
-          </div>
-          </li>
-          <div className="my-4">
-            <label htmlFor="department" className="block font-medium">
-              Department
-            </label>
-            <Select
-              id="department"
-              options={options}
-              value={department}
-              onChange={(selectedOption) => setDepartment(selectedOption)}
-            />
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-          <li>
-          <div className="my-4">
-            <label htmlFor="firstName" className="font-ruda font-medium text-gray-700 pr-4">
-              First Name:
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              className="w-full px-4 py-2 rounded bg-gray-300"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-          </li>
-          
-          <div className="my-4">
-            <label htmlFor="middleName" className="font-ruda font-medium text-gray-700 pr-4">
-              Middle Name:
-            </label>
-            <input
-              type="text"
-              id="middleName"
-              className="w-full px-4 py-2 rounded-md bg-gray-300"
-              value={middleName}
-              onChange={(e) => setMiddleName(e.target.value)}
-            />
-          </div>
-          <div className="my-4">
-            <label htmlFor="lastName" className="font-ruda font-medium text-gray-700 pr-4">
-              Last Name:
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              className="w-full px-4 py-2 rounded-md bg-gray-300"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            ></input>
-          </div>
-          </div>
-          <li>
-          <div className="my-4">
-            <label htmlFor="dob" className="font-ruda font-medium text-gray-700 pr-4">
-              Date of Birth:
-            </label>
-            <input
-              type="date"
-              id="dob"
-              className="w-1/5 px-4 py-2 rounded-md bg-gray-300"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-            />
-          </div>
-          </li>
-          <div className="my-4">
-            <label htmlFor="maritalStatus" className="font-ruda font-medium text-gray-700 pr-4">
-              Marital Status:
-            </label>
-            <input
-              type="radio"
-              id="single"
-              name="maritalStatus"
-              value="single"
-              onChange={(e) => setMaritalStatus(e.target.value)}
-            />
-            <label htmlFor="single">Single</label>
-            <input
-              type="radio"
-              id="married"
-              name="maritalStatus"
-              value="married"
-              onChange={(e) => setMaritalStatus(e.target.value)}
-            />
-            <label htmlFor="married">Married</label>
-          </div>
-          <div className="my-4">
-            <label htmlFor="nationality" className="block font-medium">
-              Nationality
-            </label>
-            <input
-              type="text"
-              id="nationality"
-              value={nationality}
-              onChange={(e) => setNationality(e.target.value)}
-            />
-          </div>
-          <div className="my-4">
-            <label htmlFor="gender" className="block font-medium">
-              Gender
-            </label>
-            <input
-              type="radio"
-              id="male"
-              name="gender"
-              value="male"
-              onChange={(e) => setGender(e.target.value)}
-            ></input>
-            <label htmlFor="male">Male</label>
-            <input
-              type="radio"
-              id="female"
-              name="gender"
-              value="female"
-              onChange={(e) => setGender(e.target.value)}
-            ></input>
-            <label htmlFor="female">Female</label>
-            <input
-              type="radio"
-              id="other"
-              name="gender"
-              value="other"
-              onChange={(e) => setGender(e.target.value)}
-            ></input>
-            <label htmlFor="female">Other</label>
-          </div>
-          <div className="my-4">
-            <h4>Present Employment</h4>
+          <ol className="list-decimal">
+            <li>
+              <div className="my-4">
+                <label
+                  htmlFor="postAppliedFor"
+                  className="font-ruda font-medium text-gray-700 pr-4"
+                >
+                  Post Applied For:
+                </label>
+                <input
+                  type="text"
+                  id="postAppliedFor"
+                  className="w-1/3 px-4 py-2 rounded bg-gray-300"
+                  value={postAppliedFor}
+                  onChange={(e) => setPostAppliedFor(e.target.value)}
+                />
+              </div>
+            </li>
+            <div className="my-4">
+              <label htmlFor="department" className="block font-medium">
+                Department
+              </label>
+              <Select
+                id="department"
+                options={options}
+                value={department}
+                onChange={(selectedOption) => setDepartment(selectedOption)}
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <li>
+                <div className="my-4">
+                  <label
+                    htmlFor="firstName"
+                    className="font-ruda font-medium text-gray-700 pr-4"
+                  >
+                    First Name:
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    className="w-full px-4 py-2 rounded bg-gray-300"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+              </li>
+
+              <div className="my-4">
+                <label
+                  htmlFor="middleName"
+                  className="font-ruda font-medium text-gray-700 pr-4"
+                >
+                  Middle Name:
+                </label>
+                <input
+                  type="text"
+                  id="middleName"
+                  className="w-full px-4 py-2 rounded-md bg-gray-300"
+                  value={middleName}
+                  onChange={(e) => setMiddleName(e.target.value)}
+                />
+              </div>
+              <div className="my-4">
+                <label
+                  htmlFor="lastName"
+                  className="font-ruda font-medium text-gray-700 pr-4"
+                >
+                  Last Name:
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  className="w-full px-4 py-2 rounded-md bg-gray-300"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                ></input>
+              </div>
+            </div>
+            <li>
+              <div className="my-4">
+                <label
+                  htmlFor="dob"
+                  className="font-ruda font-medium text-gray-700 pr-4"
+                >
+                  Date of Birth:
+                </label>
+                <input
+                  type="date"
+                  id="dob"
+                  className="w-1/5 px-4 py-2 rounded-md bg-gray-300"
+                  value={dob}
+                  onChange={(e) => setDob(e.target.value)}
+                />
+              </div>
+            </li>
+            <div className="my-4">
+              <label
+                htmlFor="maritalStatus"
+                className="font-ruda font-medium text-gray-700 pr-4"
+              >
+                Marital Status:
+              </label>
+              <input
+                type="radio"
+                id="single"
+                name="maritalStatus"
+                value="single"
+                onChange={(e) => setMaritalStatus(e.target.value)}
+              />
+              <label htmlFor="single">Single</label>
+              <input
+                type="radio"
+                id="married"
+                name="maritalStatus"
+                value="married"
+                onChange={(e) => setMaritalStatus(e.target.value)}
+              />
+              <label htmlFor="married">Married</label>
+            </div>
+            <div className="my-4">
+              <label htmlFor="nationality" className="block font-medium">
+                Nationality
+              </label>
+              <input
+                type="text"
+                id="nationality"
+                value={nationality}
+                onChange={(e) => setNationality(e.target.value)}
+              />
+            </div>
+            <div className="my-4">
+              <label htmlFor="gender" className="block font-medium">
+                Gender
+              </label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                onChange={(e) => setGender(e.target.value)}
+              ></input>
+              <label htmlFor="male">Male</label>
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+                onChange={(e) => setGender(e.target.value)}
+              ></input>
+              <label htmlFor="female">Female</label>
+              <input
+                type="radio"
+                id="other"
+                name="gender"
+                value="other"
+                onChange={(e) => setGender(e.target.value)}
+              ></input>
+              <label htmlFor="female">Other</label>
+            </div>
+            <div className="my-4">
+              <h4>Present Employment</h4>
+              <label htmlFor="designation" className="block font-medium">
+                Designation
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
             <label htmlFor="designation" className="block font-medium">
-              Designation
+              Organisation
             </label>
-            <input
-              type="text"
-              id="designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <label htmlFor="designation" className="block font-medium">
-            Organisation
-          </label>
-          <div>
-            <input
-              type="text"
-              id="designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="dob" className="block font-medium">
-              Date of Joining
-            </label>
-            <input
-              type="date"
-              id="dob"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
-            />
-          </div>
-          <div>
+            <div>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="dob" className="block font-medium">
+                Date of Joining
+              </label>
+              <input
+                type="date"
+                id="dob"
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="designation" className="block font-medium">
+                Scale of pay Rs
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="designation" className="block font-medium">
+                Total Emoluments(per month) Rs
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
+            <div className="my-4">
+              <h4>Phone Number</h4>
+              <label htmlFor="designation" className="block font-medium">
+                Office
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
             <label htmlFor="designation" className="block font-medium">
-              Scale of pay Rs
+              Mobile
             </label>
             <input
               type="text"
@@ -248,10 +297,8 @@ function HomePage() {
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
             />
-          </div>
-          <div>
             <label htmlFor="designation" className="block font-medium">
-              Total Emoluments(per month) Rs
+              *Landline
             </label>
             <input
               type="text"
@@ -259,170 +306,43 @@ function HomePage() {
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
             />
-          </div>
-          <div className="my-4">
-            <h4>Phone Number</h4>
-            <label htmlFor="designation" className="block font-medium">
-              Office
-            </label>
-            <input
-              type="text"
-              id="designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <label htmlFor="designation" className="block font-medium">
-            Mobile
-          </label>
-          <input
-            type="text"
-            id="designation"
-            value={designation}
-            onChange={(e) => setDesignation(e.target.value)}
-          />
-          <label htmlFor="designation" className="block font-medium">
-            *Landline
-          </label>
-          <input
-            type="text"
-            id="designation"
-            value={designation}
-            onChange={(e) => setDesignation(e.target.value)}
-          />
-          <div>
-            <label htmlFor="designation" className="block font-medium">
-              Area of specialisation
-            </label>
-            <input
-              type="text"
-              id="designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="designation" className="block font-medium">
-              Current area of research
-            </label>
-            <input
-              type="text"
-              id="designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          <div className="my-4">
-            <h4>Acadmic record starting with graduation</h4>
-          </div>
+            <div>
+              <label htmlFor="designation" className="block font-medium">
+                Area of specialisation
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="designation" className="block font-medium">
+                Current area of research
+              </label>
+              <input
+                type="text"
+                id="designation"
+                value={designation}
+                onChange={(e) => setDesignation(e.target.value)}
+              />
+            </div>
+            <li>
+              <div className="my-4">
+                <label
+                  htmlFor="dob"
+                  className="font-ruda font-medium text-gray-700 pr-4"
+                >
+                  Academic Record starting with Graduation:
+                </label>
+                <TableData />
+              </div>
+            </li>
           </ol>
         </form>
       </div>
-      <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-xs">
-            <colgroup>
-              <col></col>
-              <col></col>
-              <col></col>
-              <col></col>
-              <col className="w-24"></col>
-            </colgroup>
 
-            <colgroup />
-            <thead className="dark:bg-gray-700">
-              <tr className="text-left">
-                <th className="p-3">Degree</th>
-                <th className="p-3">College/University</th>
-                <th className="p-3">Year of Joining</th>
-                <th className="p-3">Year of leaving</th>
-                <th className="p-3 text-right">Percentage/CGPA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
-                <td className="p-3">
-                  <p>97412378923</p>
-                </td>
-                <td className="p-3">
-                  <p>Microsoft Corporation</p>
-                </td>
-                <td className="p-3">
-                  <p>14 Jan 2022</p>
-                  <p className="dark:text-gray-400">Friday</p>
-                </td>
-                <td className="p-3">
-                  <p>01 Feb 2022</p>
-                  <p className="dark:text-gray-400">Tuesday</p>
-                </td>
-                <td className="p-3 text-right">
-                  <p>$15,792</p>
-                </td>
-              </tr>
-              <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
-                <td className="p-3">
-                  <p>97412378923</p>
-                </td>
-                <td className="p-3">
-                  <p>Tesla Inc.</p>
-                </td>
-                <td className="p-3">
-                  <p>14 Jan 2022</p>
-                  <p className="dark:text-gray-400">Friday</p>
-                </td>
-                <td className="p-3">
-                  <p>01 Feb 2022</p>
-                  <p className="dark:text-gray-400">Tuesday</p>
-                </td>
-                <td className="p-3 text-right">
-                  <p>$275</p>
-                </td>
-                <td className="p-3 text-right"></td>
-              </tr>
-              <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
-                <td className="p-3">
-                  <p>97412378923</p>
-                </td>
-                <td className="p-3">
-                  <p>Coca Cola co.</p>
-                </td>
-                <td className="p-3">
-                  <p>14 Jan 2022</p>
-                  <p className="dark:text-gray-400">Friday</p>
-                </td>
-                <td className="p-3">
-                  <p>01 Feb 2022</p>
-                  <p className="dark:text-gray-400">Tuesday</p>
-                </td>
-                <td className="p-3 text-right">
-                  <p>$8,950,500</p>
-                </td>
-                <td className="p-3 text-right"></td>
-              </tr>
-              <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
-                <td className="p-3">
-                  <p>97412378923</p>
-                </td>
-                <td className="p-3">
-                  <p>Nvidia Corporation</p>
-                </td>
-                <td className="p-3">
-                  <p>14 Jan 2022</p>
-                  <p className="dark:text-gray-400">Friday</p>
-                </td>
-                <td className="p-3">
-                  <p>01 Feb 2022</p>
-                  <p className="dark:text-gray-400">Tuesday</p>
-                </td>
-                <td className="p-3 text-right">
-                  <p>$98,218</p>
-                </td>
-                <td className="p-3 text-right"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
       <div className="my-4">
         <h4>Employment:</h4>
       </div>
