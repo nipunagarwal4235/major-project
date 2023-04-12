@@ -226,4 +226,188 @@ function EmployeeForm(props) {
   );
 }
 
-export { StudentForm, EmployeeForm };
+function TeachingExperienceForm(props) {
+  const [year, setYear] = useState("");
+  const [nature, setNature] = useState("");
+  const [duration, setDuration] = useState("");
+  const [organization, setOrganization] = useState("");
+
+  const changeYear = (event) => {
+    setYear(event.target.value);
+  };
+  const changeNature = (event) => {
+    setNature(event.target.value);
+  };
+  const changeDuration = (event) => {
+    setDuration(event.target.value);
+  };
+  const changeOrganization = (event) => {
+    setOrganization(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      year,
+      nature,
+      duration,
+      organization,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setYear("");
+    setNature("");
+    setDuration("");
+    setOrganization("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={year}
+            onChange={changeYear}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Nature:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={nature}
+            onChange={changeNature}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Duration:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={duration}
+            onChange={changeDuration}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Organisation:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={organization}
+            onChange={changeOrganization}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DevelopmentForm(props) {
+  const[year,setYear]=useState("");
+  const[title,setTitle]=useState("");
+  const[duration,setDuration]=useState("");
+  const[place,setPlace]=useState("");
+
+  const changeYear=(event)=>{
+    setYear(event.target.value);
+  }
+  const changeTitle=(event)=>{
+    setTitle(event.target.value);
+  }
+  const changeDuration=(event)=>{
+
+    setDuration(event.target.value);
+  }
+  const changePlace=(event)=>{
+    setPlace(event.target.value);
+  }
+
+  const transferValue=(event)=>{
+    event.preventDefault();
+    const val={
+      year,
+      title,
+      duration,
+      place
+    }
+    props.func(val);
+    clearState();
+  }
+
+  const clearState=()=>{
+    setYear("");
+    setTitle("");
+    setDuration("");
+    setPlace("");
+  }
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+
+        <div>
+
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={year}
+            onChange={changeYear}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Title:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={title}
+            onChange={changeTitle}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Duration:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={duration}
+            onChange={changeDuration}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Place:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={place}
+            onChange={changePlace}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+export { StudentForm, EmployeeForm, TeachingExperienceForm , DevelopmentForm };
