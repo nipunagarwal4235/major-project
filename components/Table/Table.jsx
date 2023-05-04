@@ -226,6 +226,421 @@ function EmployeeForm(props) {
   );
 }
 
+function ProfessionalForm(props) {
+  const [Year, setYear] = useState("");
+  const [Nature, setNature] = useState("");
+  const [Duration, setDuration] = useState("");
+  const [Organization, setOrganization] = useState("");
+
+  const changeYear = (event) => {
+    setYear(event.target.value);
+  };
+  const changeNature = (event) => {
+    setNature(event.target.value);
+  };
+  const changeDuration = (event) => {
+    setDuration(event.target.value);
+  };
+  const changeOrganization = (event) => {
+    setOrganization(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      Year,
+      Nature,
+      Duration,
+      Organization,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setYear("");
+    setNature("");
+    setDuration("");
+    setOrganization("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Year}
+            onChange={changeYear}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Nature of Training:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Nature}
+            onChange={changeNature}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Duration:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Duration}
+            onChange={changeDuration}
+          />
+        </div>
+
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Organization of Training:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Organization}
+            onChange={changeOrganization}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
+function MembershipForm(props) {
+  const [Body, setBody] = useState("");
+  const [Status, setStatus] = useState("");
+
+  const changeBody = (event) => {
+    setBody(event.target.value);
+  };
+  const changeStatus = (event) => {
+    setStatus(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      Body,
+      Status,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setBody("");
+    setStatus("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Name of the Body:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Body}
+            onChange={changeBody}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Status:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Status}
+            onChange={changeStatus}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
+function ConferenceForm(props) {
+  const [Year, setYear] = useState("");
+  const [Conference, setConference] = useState("");
+  const [Title, setTitle] = useState("");
+
+  const changeYear = (event) => {
+    setYear(event.target.value);
+  };
+  const changeConference = (event) => {
+    setConference(event.target.value);
+  };
+  const changeTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      Year,
+      Conference,
+      Title,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setYear("");
+    setConference("");
+    setTitle("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Year}
+            onChange={changeYear}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Conference/Seminar attended:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Conference}
+            onChange={changeConference}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Title of Paper read(if any):
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Title}
+            onChange={changeTitle}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
+function CourseForm(props) {
+  const [Title, setTitle] = useState("");
+  const [Pgug, setPgug] = useState("");
+  const [Sole, setSole] = useState("");
+  const [Year, setYear] = useState("");
+
+  const changeTitle = (event) => {
+    setTitle(event.target.value);
+  };
+  const changePgug = (event) => {
+    setPgug(event.target.value);
+  };
+  const changeSole = (event) => {
+    setSole(event.target.value);
+  };
+  const changeYear = (event) => {
+    setYear(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      Title,
+      Pgug,
+      Sole,
+      Year,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setYear("");
+    setConference("");
+    setTitle("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Title of the course:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Title}
+            onChange={changeTitle}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            PG or UG:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Pgug}
+            onChange={changePgug}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Sole or with others:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Sole}
+            onChange={changeSole}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Year}
+            onChange={changeYear}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
+function PostForm(props) {
+  const [Name, setName] = useState("");
+  const [Title, setTitle] = useState("");
+  const [Doctorate, setDoctorate] = useState("");
+  const [Year, setYear] = useState("");
+
+  const changeName = (event) => {
+    setName(event.target.value);
+  };
+  const changeTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const changeDoctorate = (event) => {
+    setDoctorate(event.target.value);
+  };
+  const changeYear = (event) => {
+    setYear(event.target.value);
+  };
+
+  const transferValue = (event) => {
+    event.preventDefault();
+    const val = {
+      Name,
+      Title,
+      Doctorate,
+      Year,
+    };
+    props.func(val);
+    clearState();
+  };
+
+  const clearState = () => {
+    setName("");
+    setTitle("");
+    setDoctorate("");
+    setYear("");
+  };
+
+  return (
+    <div className="pt-8">
+      <div className="grid grid-cols-5 gap-2">
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Name of Scholar:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Name}
+            onChange={changeName}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Title of thesis:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Title}
+            onChange={changeTitle}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Doctorate or Master's level:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Doctorate}
+            onChange={changeDoctorate}
+          />
+        </div>
+        <div>
+          <label className="font-ruda font-medium text-gray-700 pr-4">
+            Year of Completion:
+          </label>
+          <input
+            className="w-full px-4 py-2 rounded-md bg-gray-300"
+            type="text"
+            value={Year}
+            onChange={changeYear}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={transferValue}>Add Row</button>
+      </div>
+    </div>
+  );
+}
+
 function TeachingExperienceForm(props) {
   const [year, setYear] = useState("");
   const [nature, setNature] = useState("");
@@ -317,50 +732,47 @@ function TeachingExperienceForm(props) {
 }
 
 function DevelopmentForm(props) {
-  const[year,setYear]=useState("");
-  const[title,setTitle]=useState("");
-  const[duration,setDuration]=useState("");
-  const[place,setPlace]=useState("");
+  const [year, setYear] = useState("");
+  const [title, setTitle] = useState("");
+  const [duration, setDuration] = useState("");
+  const [place, setPlace] = useState("");
 
-  const changeYear=(event)=>{
+  const changeYear = (event) => {
     setYear(event.target.value);
-  }
-  const changeTitle=(event)=>{
+  };
+  const changeTitle = (event) => {
     setTitle(event.target.value);
-  }
-  const changeDuration=(event)=>{
-
+  };
+  const changeDuration = (event) => {
     setDuration(event.target.value);
-  }
-  const changePlace=(event)=>{
+  };
+  const changePlace = (event) => {
     setPlace(event.target.value);
-  }
+  };
 
-  const transferValue=(event)=>{
+  const transferValue = (event) => {
     event.preventDefault();
-    const val={
+    const val = {
       year,
       title,
       duration,
-      place
-    }
+      place,
+    };
     props.func(val);
     clearState();
-  }
+  };
 
-  const clearState=()=>{
+  const clearState = () => {
     setYear("");
     setTitle("");
     setDuration("");
     setPlace("");
-  }
+  };
 
   return (
     <div className="pt-8">
       <div className="grid grid-cols-5 gap-2">
-
         <div>
-
           <label className="font-ruda font-medium text-gray-700 pr-4">
             Year:
           </label>
@@ -409,5 +821,14 @@ function DevelopmentForm(props) {
   );
 }
 
-
-export { StudentForm, EmployeeForm, TeachingExperienceForm , DevelopmentForm };
+export {
+  StudentForm,
+  EmployeeForm,
+  ProfessionalForm,
+  MembershipForm,
+  ConferenceForm,
+  CourseForm,
+  PostForm,
+  TeachingExperienceForm,
+  // DevelopmentForm,
+};
