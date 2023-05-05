@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-import Header from "./Header";
 import Navbar from "./Navbar";
+import Header from "./Header";
+
 import Heading from "./Heading";
 import PersonalDetails from "./PersonalDetails";
 import AcademicDetails from "./AcademicDetails";
@@ -21,76 +22,82 @@ function HomePage() {
       <Navbar />
       <Header />
       <Heading />
-      {/* <Wizard
-      initialValues={{
-        email: "",
-        firstName: "",
-        lastName: "",
-        location: ""
-      }}
-      onSubmit={async (values) =>
-        sleep(300).then(() => console.log("Wizard submit", values))
-      }
-    >
-      <StepOne
-        onSubmit={() => console.log("Step1 onSubmit")}
-        validationSchema={Yup.object({
-          firstName: Yup.string().required("required"),
-          lastName: Yup.string().required("required")
-        })}
-      />
-      <StepTwo
-        onSubmit={(values) => console.log("Step2 onSubmit", values)}
-        validationSchema={Yup.object({
-          email: Yup.string()
-            .email("Invalid email address")
-            .required("required")
-        })}
-      />
-      <StepThree
-        onSubmit={() => console.log("Step3 onSubmit")}
-        validationSchema={Yup.object({
-          location: Yup.string().required("required")
-        })}
-      />
-    </Wizard> */}
       <Wizard
         initialValues={{
-          postAppliedFor: "",
-          firstName: "",
-          lastName: "",
-          middleName: "",
-          dateOfBirth: "",
-          maritalStatus: "",
-          nationality: "",
-          gender: "",
-          permanentAddress: "",
-          presentAddress: "",
-          emailAddress: "",
-          mobileNumber: "",
-          officeNumber: "",
-          landlineNumber: "",
+          postAppliedFor: "Associate Professor",
+          firstName: "Nipun",
+          lastName: "Agarwal",
+          middleName: "NA",
+          dateOfBirth: "2023-05-05",
+          maritalStatus: "single",
+          nationality: "Indian",
+          gender: "male",
+          permanentAddress: "BML Munjal University",
+          presentAddress: "BML Munjal University",
+          emailAddress: "nipun.agarwal.20cse@gmail.com",
+          mobileNumber: "6302006563",
+          officeNumber: "6302006563",
+          landlineNumber: "6302006563",
           areaofSpecialisation: "",
           currentAreaofResearch: "",
         }}
-        onSubmit={async (values) =>
-          sleep(300).then(() => console.log("Wizard submit", values))
+        onSubmit={(values) =>
+          fetch("http://localhost:3000/api/user", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.error(error))
         }
       >
         <PersonalDetails
-          onSubmit={() => console.log("Step1 onSubmit")}
+          onSubmit={(values) =>
+            fetch("http://localhost:3000/api/user", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values),
+            })
+              .then((response) => response.json())
+              .then((data) => console.log(data))
+              .catch((error) => console.error(error))
+          }
           validationSchema={Yup.object({
-            postAppliedFor: Yup.string().required("required"),
-            firstName: Yup.string().required("required"),
-            lastName: Yup.string().required("required"),
+            postAppliedFor: Yup.string().required(
+              "Post Applied For is required"
+            ),
+            firstName: Yup.string().required("First Name required"),
+            lastName: Yup.string().required("Last Name is required"),
             dateOfBirth: Yup.date()
               .nullable()
               .max(new Date(), "Date of Birth cannot be in the future")
               .required("Date of Birth is required"),
-              maritalStatus: Yup.string().oneOf(["single", "married"]).required("Marital Status is required"),
-              nationality: Yup.string().required("Nationality is required"),
-              presentAddress: Yup.string().required("Present Address is required"),
-
+            maritalStatus: Yup.string()
+              .oneOf(["single", "married"])
+              .required("Marital Status is required"),
+            nationality: Yup.string().required("Nationality is required"),
+            gender: Yup.string()
+              .oneOf(["male", "female", "other"])
+              .required("Gender is required"),
+            permanentAddress: Yup.string().required(
+              "Permanent Address is required"
+            ),
+            presentAddress: Yup.string().required(
+              "Present Address is required"
+            ),
+            emailAddress: Yup.string()
+              .email("Invalid email address")
+              .required("Email Address is required"),
+            mobileNumber: Yup.string().required("Mobile Number is required"),
+            officeNumber: Yup.string().required("Office Number is required"),
+            landlineNumber: Yup.string().required(
+              "Landline Number is required"
+            ),
           })}
         />
         <AcademicDetails />
@@ -105,11 +112,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-// personal
-// academics
-// employement
-// experience
-// professional achievement
-// academic supervision
-// achievements

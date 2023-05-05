@@ -48,19 +48,21 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
     >
       {(formik) => (
         <Form>
-          <p>
+          <p className="px-16 text-xl font-ruda text-center">
             Step {stepNumber + 1} of {totalSteps}
           </p>
           {/* {step} */}
           {React.cloneElement(step, { formik: formik })}
           <div style={{ display: "flex" }}>
             {stepNumber > 0 && (
-              <button onClick={() => previous(formik.values)} type="button">
+              <div className="p-8">
+              <button className="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" onClick={() => previous(formik.values)} type="button">
                 Back
               </button>
+              </div>
             )}
-            <div>
-              <button disabled={formik.isSubmitting} type="submit">
+            <div className="p-8">
+              <button className="flex items-center justify-center px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" disabled={formik.isSubmitting} type="submit">
                 {isLastStep ? "Submit" : "Next"}
               </button>
             </div>

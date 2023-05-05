@@ -830,5 +830,5 @@ export {
   CourseForm,
   PostForm,
   TeachingExperienceForm,
-  // DevelopmentForm,
+  DevelopmentForm,
 };

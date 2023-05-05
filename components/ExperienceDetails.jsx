@@ -1,8 +1,11 @@
 import React from "react";
+import {TeachingExperienceData} from './Table/Form.jsx'
 
 const ExperienceDetails = () => {
   return (
     <>
+    <div className="px-16 py-4">
+    <ol className="list-decimal">
       <li>
         <div className="my-4">
           <label
@@ -11,7 +14,7 @@ const ExperienceDetails = () => {
           >
             Teaching Experience:
           </label>
-          {/* <TeachingExperienceData /> */}
+          <TeachingExperienceData />
         </div>
       </li>
       <li>
@@ -25,6 +28,8 @@ const ExperienceDetails = () => {
           {/* <TableData /> */}
         </div>
       </li>
+      </ol>
+      </div>
     </>
   );
 };

@@ -1,8 +1,12 @@
 import React from 'react'
+import {MembershipData} from './Table/Form.jsx'
+import {ConferenceData} from './Table/Form.jsx'
 
 const ProfessionalDetails = () => {
   return (
     <>
+    <div className='px-16 py-4'>
+    <ol className='list-decimal'>
         <li>
               <div className="my-4">
                 <label
@@ -22,7 +26,7 @@ const ProfessionalDetails = () => {
                 >
                   Membership of Professional societies/bodies:
                 </label>
-                {/* <MembershipData /> */}
+                <MembershipData />
               </div>
             </li>
             <li>
@@ -33,9 +37,11 @@ const ProfessionalDetails = () => {
                 >
                   Key Seminars/Workshops/Conferences attended:
                 </label>
-                {/* <ConferenceData /> */}
+                <ConferenceData />
               </div>
             </li>
+            </ol>
+            </div>
     </>
   )
 }
